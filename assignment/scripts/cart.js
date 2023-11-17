@@ -2,15 +2,76 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
+let basket = [];
+const maxItems = 5; // Set maxItems GLOBALLY
 
+// Inital addItem() commented out for the STRETCH GOAL portion to work.
+// function addItem(item){
+//     basket.push(item);
+//     return true;
+// }
 
+console.log(`Adding Apple ${addItem('apple')}`);
+console.log(`Adding egg ${addItem('egg')}`);
+console.log(`Adding pear ${addItem('pear')}`);
+console.log(`Adding chicken ${addItem('chicken')}`);
+console.log(`Adding milk ${addItem('milk')}`);
+console.log(basket);
 
+function listItems(){
+    for (let i=0; i<basket.length; i++){
+        console.log(basket[i]);
+    }
+}
+listItems()
 
+// basket = [];
+// console.log(basket);
 
+function empty(){
+    // basket = []
+    for (let i=basket.length-1; i>=0; i--){
+        basket.pop();
+    }
+}
+empty();
+console.log(basket);
 
+// STRETCH GOALS
+// const maxItems = 5;
+function isFull(){
+    if (basket.length < maxItems){
+       return false;
+    }   else {
+        return true;
+    }
+}
+console.log(basket);
+isFull();
 
-
-
+function addItem(item){
+    if (isFull() === false){
+    console.log('Basket NOT FULL, add item')
+    basket.push(item);
+    return true;
+    } else {
+        console.log('Basket IS FULL, do NOT add item')
+        return false;
+    }
+}
+// Checking to see if addItme() is functioning correctly by adding more than the 5 maxItems. 
+addItem('pear');
+addItem('pear');
+addItem('pear');
+addItem('pear');
+addItem('pear');
+addItem('pear');
+addItem('pear');
+addItem('pear');
+addItem('pear');
+addItem('pear');
+addItem('pear');
+console.log(basket);
 
 // DO NOT MODIFY
 // Used for automated testing

@@ -41,8 +41,10 @@ console.log(basket);
 // const maxItems = 5;
 function isFull(){
     if (basket.length < maxItems){
-       return false;
+        console.log('Basket is NOT full.');
+        return false;
     }   else {
+        console.log('Basket is full.');
         return true;
     }
 }
@@ -51,26 +53,40 @@ isFull();
 
 function addItem(item){
     if (isFull() === false){
-    console.log('Basket NOT FULL, add item')
     basket.push(item);
     return true;
     } else {
-        console.log('Basket IS FULL, do NOT add item')
         return false;
     }
 }
 // Checking to see if addItme() is functioning correctly by adding more than the 5 maxItems. 
+addItem('candy');
+addItem('milk');
+addItem('sugar');
+addItem('flour');
+addItem('egg');
+addItem('soysauce');
+addItem('mayo');
 addItem('pear');
 addItem('pear');
 addItem('pear');
 addItem('pear');
-addItem('pear');
-addItem('pear');
-addItem('pear');
-addItem('pear');
-addItem('pear');
-addItem('pear');
-addItem('pear');
+console.log(basket);
+
+// remove item
+function removeItem(item){
+    let itemIndex = basket.indexOf(item);
+    console.log(`index of removed item ${itemIndex}`);
+    if (itemIndex > -1){
+        console.log(basket[itemIndex]);
+        basket.splice(itemIndex, 1);
+    } else {
+        console.log(null);
+        return null;
+    }
+}
+    // basket.splice(itemIndex);
+removeItem('flour');
 console.log(basket);
 
 // DO NOT MODIFY
